@@ -20,31 +20,30 @@ body {
 
 .container {
     display: flex;
-    flex: 1; /* 남은 화면 전체를 차지하게 함 */
+    flex: 1; 
     padding: 30px;
-    align-items: flex-start; /* 내부 요소들을 위쪽으로 정렬 */
+    align-items: flex-start; 
 }
 
-/* 상단 회색 바: 완벽한 90년대 윈도우 스타일 */
+
 .top-bar {
-    /* 1. 내부를 확실히 채우기 위한 배경색 설정 */
+    
     background-color: #c0c0c0 !important; 
     display: flex;
     align-items: center;
     
-    /* 2. 높이와 여백 조절 */
+  
     height: 60px; 
     padding: 0 10px;
-    box-sizing: border-box; /* 테두리가 높이에 포함되도록 설정 */
+    box-sizing: border-box; 
 
-    /* 3. 폰트 설정 (PixelFont 적용) */
+    
     font-family: 'PixelFont', sans-serif;
     font-size: 30px;
     color: black;
     font-weight: bold;
 
-    /* 4. 입체적인 Bevel 테두리 (핵심) */
-    /* 위와 왼쪽은 아주 밝은 흰색, 아래와 오른쪽은 중간 회색으로 입체감 부여 */
+    
     border-top: 4px solid #ffffff;
     border-left: 4px solid #ffffff;
     border-right: 4px solid #3a3a3a;
@@ -54,13 +53,12 @@ body {
     z-index: 10;
 }
 
-/*Icons 
 
-/* 아이콘 메뉴: 왼쪽 세로 정렬 */
+
 .icon-menu {
     display: flex;
     flex-direction: column;
-    gap: 35px; /* 아이콘 세트들 사이의 간격 */
+    gap: 35px; 
     width: 100px;
 }
 
@@ -78,58 +76,49 @@ body {
 
 @keyframes iconBounce {
     0%, 100% {
-        transform: translateY(0); /* 제자리 */
+        transform: translateY(0); 
     }
     50% {
-        transform: translateY(-10px); /* 위로 10px 점프 */
+        transform: translateY(-10px); 
     }
 }
 
-/* 2. 아이콘 아이템에 마우스를 올렸을 때(hover) 효과 적용 */
+
 .icon-item:hover img {
-    /* 위에서 만든 애니메이션을 0.5초 동안 무한 반복 */
+   
     animation: iconBounce 0.5s ease infinite;
-    
-    /* 마우스를 올렸을 때 아이콘이 더 선명해 보이도록 살짝 필터 효과 (선택 사항) */
     filter: brightness(1.2);
 }
 
-/* 3. 마우스를 올렸을 때 글자 색상도 노란색으로 변경 (Y2K 감성 강조) */
 .icon-item:hover span {
     color: #ffff00;
     text-shadow: 1px 1px 0px #000;
 }
 
-/* 아이콘 이미지: 픽셀 아트 선명하게 */
 .icon-item img {
-    width: 70px; /* 예시 사진과 비슷한 크기 */
+    width: 70px; 
     height: auto;
     display: block;
     image-rendering: pixelated; 
 }
 
-/* 폰트 위치: 이미지 바로 아래 밀착 */
 .icon-item span {
     font-size: 20px;
-    margin-top: 2px; /* 숫자를 줄일수록 사진과 글자가 붙습니다 */
+    margin-top: 2px; 
     font-weight: bold;
 }
 
-/* 오른쪽 웰컴 텍스트 배치 */
 .welcome-section {
     flex: 1;
     display: flex;
     flex-direction: column;
     
-    /* 세로: 위쪽(flex-start), 가로: 오른쪽(flex-end) */
+    
     justify-content: flex-start !important; 
     align-items: flex-end !important;
     
-    /* 상단 바와 아이콘에 맞춰 여백 조정 */
     padding-top: 10px; 
     padding-right: 20px;
-    
-    /* 영역이 차지하는 높이를 부모에 맞춤 */
     height: 100%;
 }
 
@@ -137,7 +126,7 @@ body {
     font-family: 'PixelFont', sans-serif;
     font-size: 110px;
     margin: 0;
-    line-height: 0.9; /* 글자를 더 위로 바짝 붙임 */
+    line-height: 0.9; 
     text-align: right;
 }
 
