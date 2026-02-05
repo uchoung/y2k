@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>The Archive of Y2K:Korean winter</title>
+    <link rel="stylesheet" href="what.css"> 
+</head>
+<body>
+    <div class="top-bar">Hello</div>
+    <div class="container">
+        <div class="info-content">
+        <section class="info-section">
+            <h2 class="info-title">What is Y2K?</h2>
+            <p class="info-text">
+                Y2K refers to the period from the late 1990s to the early 2000s. 
+                It was a transitional era marked by rapid change, 
+                much like the shift from analog to digital. 
+                During this time, technology, culture, and everyday life were 
+                undergoing significant transformations.
+            </p>
+        </section>
+
+        <section class="info-section">
+            <h2 class="info-title">What is the purpose of this website?</h2>
+            <p class="info-text">
+                The purpose of this website is to capture and preserve images of past winters in Korea. 
+                By collecting people's personal memories and moments, 
+                I aim to show that even as time passes, memories continue to exist somewhere, in one form or another.
+            </p>
+        </section>
+    </div>
+    </div>
+    
+
+
+<div class="taskbar-xp">
+    <div class="start-button-xp">
+        <div class="xp-logo"></div>
+        <span>Y2K: What is it?</span>
+    </div>
+    
+    <div class="task-items-xp">
+        <div class="quick-launch">
+        </div>
+        <div class="taskbar-apps">
+            <a href="../musics/music_page.html" class="task-icon-item">
+                <img src="../html/welcome.png" alt="Main">
+            </a>
+            <a href="../text/text_page.html" class="task-icon-item">
+                <img src="../html/y2k text.png" alt="Texts">
+            </a>
+            <a href="../photos/photos_page.html" class="task-icon-item">
+                <img src="../html/y2k photo.png" alt="Photos">
+            </a>
+            <a href="../musics/music_page.html" class="task-icon-item">
+                <img src="../html/y2k music.png" alt="Musics">
+            </a>
+        </div>
+    </div>
+
+    <div class="system-tray-xp">
+        <span class="clock-xp" id="digital-clock">00:00</span>
+    </div>
+
+
+
+
+
+    
+</div>
+
+    <div class="terminal-overlay"></div>
+
+    <script>
+        function createSnowflake() {
+            const snowflake = document.createElement('div');
+            snowflake.classList.add('snowflake');
+            const size = Math.random() * 5 + 2 + 'px'; 
+            const left = Math.random() * window.innerWidth + 'px';
+            const duration = Math.random() * 3 + 2 + 's'; 
+            const opacity = Math.random() * 0.2 + 0.8;
+
+            snowflake.style.width = size;
+            snowflake.style.height = size;
+            snowflake.style.left = left;
+            snowflake.style.opacity = opacity;
+
+            document.body.appendChild(snowflake);
+
+            const animation = snowflake.animate([
+                { transform: `translateY(0) translateX(0)`, opacity: opacity },
+                { transform: `translateY(105vh)`, opacity: 0.7 }
+            ], {
+                duration: parseFloat(duration) * 1000,
+                easing: 'steps(60, end)'
+            });
+
+            animation.onfinish = () => snowflake.remove();
+        }
+        setInterval(createSnowflake, 200);
+
+        function updateClock() {
+            const now = new Date();
+            let hours = now.getHours();
+            let minutes = now.getMinutes();
+            hours = hours < 10 ? '0' + hours : hours;
+            minutes = minutes < 10 ? '0' + minutes : minutes;
+            const timeString = hours + ':' + minutes;
+            const clockElement = document.getElementById('digital-clock');
+            if (clockElement) {
+                clockElement.innerText = timeString;
+            }
+        }
+        updateClock();
+        setInterval(updateClock, 1000);
+    </script>
+</body>
+</html>
