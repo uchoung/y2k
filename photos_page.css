@@ -272,3 +272,24 @@ body {
     font-family: 'PixelFont', sans-serif;
     text-shadow: 1px 1px 1px rgba(0,0,0,0.3);
 }
+
+@keyframes iconBounce {
+    0%, 100% {
+        transform: translateY(0); 
+    }
+    50% {
+        transform: translateY(-10px); 
+    }
+}
+
+
+.icon-item:hover img {
+   
+    animation: iconBounce 0.5s ease infinite;
+    filter: brightness(1.2);
+}
+
+.icon-item:hover span {
+    color: #ffff00;
+    text-shadow: 1px 1px 0px #000;
+}
