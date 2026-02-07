@@ -22,13 +22,13 @@ body {
     display: flex;
     flex-direction: column;
     flex: 1;
-    padding: 120px 10vw 40px 10vw; 
+    padding: 120px 10vw 100px 10vw; 
     box-sizing: border-box;
     align-items: center; 
     justify-content: flex-start; 
     position: relative;
-    overflow: hidden; 
-    height: calc(100vh - 105px);
+    overflow-y: auto; 
+    height: calc(100vh - 45px);
 }
 
 
